@@ -23,8 +23,6 @@ struct PostVIPBadge: View {
                         RoundedRectangle(cornerRadius: 7.5)
                             .stroke(Color.white, lineWidth: 1)
                     )
-            }else {
-                Text("")
             }
         }
     }
