@@ -8,15 +8,29 @@
 import SwiftUI
 
 struct PostListView: View {
-    init() {
-        UITableView.appearance().separatorStyle = .none
-        UITableViewCell.appearance().selectionStyle = .none
+    
+    let category: PostListCategory
+    
+    var postList: PostList {
+        switch category {
+        case .recommend:
+            return loadPostListData("PostListData_recommend_1.json")
+        case .hot:
+            return loadPostListData("PostListData_hot_1.json")
+        }
     }
     var body: some View {
         List {
-            ForEach(postList.list) { post in
-                PostCell(post: post)
-                    .listRowInsets(EdgeInsets())
+            ForEach(self.postList.list) { post in
+                ZStack {
+//                    PostCell(post: post)
+                    NavigationLink(destination: PostDetailView(post: post)) {
+                        PostCell(post: post)
+//                        EmptyView()
+                    }
+//                    .hidden()
+                }
+                .listRowInsets(EdgeInsets())
             }
         }
     }
@@ -24,6 +38,10 @@ struct PostListView: View {
 
 struct PostListView_Previews: PreviewProvider {
     static var previews: some View {
-        PostListView()
+        NavigationView {
+            PostListView(category: .recommend)
+                .navigationBarTitle("title")
+                .navigationBarHidden(true)
+        }
     }
 }

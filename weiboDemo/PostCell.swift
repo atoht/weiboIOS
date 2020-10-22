@@ -52,16 +52,12 @@ struct PostCell: View {
             Text(post.text)
                 .font(.system(size: 17))
             if !post.images.isEmpty {
-                loadImage(name: post.images[0])
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width - 30, height: (UIScreen.main.bounds.width - 30) * 0.75)
-                    .clipped()
+                PostImageCell(images: post.images, width: UIScreen.main.bounds.width - 30)
             }
             
             Divider()
             
-            HStack(spacing: 5) {
+            HStack(spacing: 0) {
                 Spacer()
                 PostCellToolbarButton(image: "message", text: post.commentCountText, color: .black) {
                     print("click comment button")
@@ -86,7 +82,7 @@ struct PostCell: View {
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
-        PostCell(post: postList.list[1])
+        PostCell(post: postList.list[0])
             
             
     }

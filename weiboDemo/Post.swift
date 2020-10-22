@@ -32,7 +32,7 @@ extension Post {
     var avatarImage: Image {
         return loadImage(name: avatar)
     }
-    
+     
     var commentCountText: String {
         if commentCount <= 0 {return "评论"}
         if commentCount < 1000 {return "\(commentCount)"}

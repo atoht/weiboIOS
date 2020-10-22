@@ -9,13 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!aaa")
-            .padding()
+//        NavigationLink(destination: PostListView()) {
+        HomeView()
+//        }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+//        NavigationView {
+            ContentView()
+//                .navigationTitle("跳转")
+//                .navigationBarHidden(true)
+//        }
+        
     }
 }
