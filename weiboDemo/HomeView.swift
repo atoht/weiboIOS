@@ -17,15 +17,21 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
-                HScrollViewController(pagdWidth: geometry.size.width, contentSize: CGSize(width: geometry.size.width * 2, height: geometry.size.height),
-                                      leftPercent: self.$leftPercent) {
-                    HStack(spacing: 0) {
-                        PostListView(category: .recommend)
-                            .frame(width: UIScreen.main.bounds.width)
-                        PostListView(category: .hot)
-                            .frame(width: UIScreen.main.bounds.width)
+                if geometry.size.width != 0 {
+                    HScrollViewController(pageWidth: geometry.size.width, contentSize: CGSize(width: geometry.size.width * 2, height: geometry.size.height),
+                                          leftPercent: self.$leftPercent) {
+//                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 0) {
+                                PostListView(category: .recommend)
+                                    .frame(width: UIScreen.main.bounds.width)
+                                PostListView(category: .hot)
+                                    .frame(width: UIScreen.main.bounds.width)
+                            }
+//                        }
+                        log(geometry)
                     }
                 }
+                
             }
 //            ScrollView(.horizontal, showsIndicators: false) {
 //                HStack(spacing: 0) {
@@ -39,11 +45,21 @@ struct HomeView: View {
             .navigationBarItems(leading: HomeNavigationBar(leftPercent: $leftPercent))
             .navigationBarTitle("首页", displayMode: .inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
+    
+    func log(_ geometry: GeometryProxy) -> EmptyView {
+        print("homeView start")
+        print(geometry.size.width)
+        print("homeView end")
+        
+        return EmptyView()
+    }
+
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(UserData())
     }
 }

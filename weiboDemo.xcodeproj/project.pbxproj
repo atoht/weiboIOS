@@ -96,15 +96,16 @@
 		21B0B46F253DEB500066462F /* PostCellToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0B46E253DEB500066462F /* PostCellToolbarButton.swift */; };
 		21B0B474253DF3A60066462F /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0B473253DF3A60066462F /* PostListView.swift */; };
 		21B0B47F253F059F0066462F /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0B47E253F059F0066462F /* PostImageCell.swift */; };
+		21B8CAE325442CAC00AA6C02 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B8CAE225442CAC00AA6C02 /* CommentInputView.swift */; };
+		21B8CAE8254431A500AA6C02 /* CommentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B8CAE7254431A500AA6C02 /* CommentTextView.swift */; };
 		21BBB583253F1EB700D52739 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BBB582253F1EB700D52739 /* PostDetailView.swift */; };
 		21DD314D253C7B7A00AA7A5E /* weiboDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD314C253C7B7A00AA7A5E /* weiboDemoApp.swift */; };
-		21DD314F253C7B7A00AA7A5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD314E253C7B7A00AA7A5E /* ContentView.swift */; };
 		21DD3151253C7B7B00AA7A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DD3150253C7B7B00AA7A5E /* Assets.xcassets */; };
 		21DD3154253C7B7B00AA7A5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DD3153253C7B7B00AA7A5E /* Preview Assets.xcassets */; };
 		21DD315F253C7B7C00AA7A5E /* weiboDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD315E253C7B7C00AA7A5E /* weiboDemoTests.swift */; };
 		21DD316A253C7B7C00AA7A5E /* weiboDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD3169253C7B7C00AA7A5E /* weiboDemoUITests.swift */; };
 		21DD317E253C86FB00AA7A5E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD317D253C86FB00AA7A5E /* PostCell.swift */; };
-		21E3BF2B254054460061DFE4 /* PostListCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E3BF2A254054460061DFE4 /* PostListCategory.swift */; };
+		21E3BF2B254054460061DFE4 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E3BF2A254054460061DFE4 /* UserData.swift */; };
 		21E6C01B253F2BDB007871B2 /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E6C01A253F2BDB007871B2 /* HomeNavigationBar.swift */; };
 		21E6C025253F4597007871B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E6C024253F4597007871B2 /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -217,10 +218,11 @@
 		21B0B46E253DEB500066462F /* PostCellToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellToolbarButton.swift; sourceTree = "<group>"; };
 		21B0B473253DF3A60066462F /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		21B0B47E253F059F0066462F /* PostImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
+		21B8CAE225442CAC00AA6C02 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		21B8CAE7254431A500AA6C02 /* CommentTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextView.swift; sourceTree = "<group>"; };
 		21BBB582253F1EB700D52739 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		21DD3149253C7B7A00AA7A5E /* weiboDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiboDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DD314C253C7B7A00AA7A5E /* weiboDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weiboDemoApp.swift; sourceTree = "<group>"; };
-		21DD314E253C7B7A00AA7A5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		21DD3150253C7B7B00AA7A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21DD3153253C7B7B00AA7A5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21DD3155253C7B7B00AA7A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,7 +233,7 @@
 		21DD3169253C7B7C00AA7A5E /* weiboDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weiboDemoUITests.swift; sourceTree = "<group>"; };
 		21DD316B253C7B7C00AA7A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DD317D253C86FB00AA7A5E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		21E3BF2A254054460061DFE4 /* PostListCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCategory.swift; sourceTree = "<group>"; };
+		21E3BF2A254054460061DFE4 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		21E6C01A253F2BDB007871B2 /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 		21E6C024253F4597007871B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -379,17 +381,18 @@
 				21B0B3BD253DD7C10066462F /* Resources */,
 				21DD317D253C86FB00AA7A5E /* PostCell.swift */,
 				21B0B473253DF3A60066462F /* PostListView.swift */,
+				21B8CAE225442CAC00AA6C02 /* CommentInputView.swift */,
+				21B8CAE7254431A500AA6C02 /* CommentTextView.swift */,
 				21BBB582253F1EB700D52739 /* PostDetailView.swift */,
 				21B0B47E253F059F0066462F /* PostImageCell.swift */,
 				21B0B46E253DEB500066462F /* PostCellToolbarButton.swift */,
 				217C870E253C9CE200D9ECD8 /* Post.swift */,
 				217C8709253C9AFE00D9ECD8 /* PostVIPBadge.swift */,
 				21DD314C253C7B7A00AA7A5E /* weiboDemoApp.swift */,
-				21DD314E253C7B7A00AA7A5E /* ContentView.swift */,
 				21E6C01A253F2BDB007871B2 /* HomeNavigationBar.swift */,
 				21E6C024253F4597007871B2 /* HomeView.swift */,
 				21775623254075B30053B966 /* HscrollViewController.swift */,
-				21E3BF2A254054460061DFE4 /* PostListCategory.swift */,
+				21E3BF2A254054460061DFE4 /* UserData.swift */,
 				21DD3150253C7B7B00AA7A5E /* Assets.xcassets */,
 				21DD3155253C7B7B00AA7A5E /* Info.plist */,
 				21DD3152253C7B7B00AA7A5E /* Preview Content */,
@@ -635,9 +638,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B8CAE325442CAC00AA6C02 /* CommentInputView.swift in Sources */,
+				21B8CAE8254431A500AA6C02 /* CommentTextView.swift in Sources */,
 				21BBB583253F1EB700D52739 /* PostDetailView.swift in Sources */,
 				21775624254075B30053B966 /* HscrollViewController.swift in Sources */,
-				21DD314F253C7B7A00AA7A5E /* ContentView.swift in Sources */,
 				21B0B46F253DEB500066462F /* PostCellToolbarButton.swift in Sources */,
 				217C870A253C9AFE00D9ECD8 /* PostVIPBadge.swift in Sources */,
 				21DD314D253C7B7A00AA7A5E /* weiboDemoApp.swift in Sources */,
@@ -645,7 +649,7 @@
 				21E6C01B253F2BDB007871B2 /* HomeNavigationBar.swift in Sources */,
 				217C870F253C9CE200D9ECD8 /* Post.swift in Sources */,
 				21E6C025253F4597007871B2 /* HomeView.swift in Sources */,
-				21E3BF2B254054460061DFE4 /* PostListCategory.swift in Sources */,
+				21E3BF2B254054460061DFE4 /* UserData.swift in Sources */,
 				21B0B474253DF3A60066462F /* PostListView.swift in Sources */,
 				21B0B47F253F059F0066462F /* PostImageCell.swift in Sources */,
 			);

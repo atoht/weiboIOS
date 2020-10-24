@@ -13,11 +13,11 @@ struct HScrollViewController<Content: View>: UIViewControllerRepresentable {
     let content: Content
     @Binding var leftPercent: CGFloat
     
-    init(pagdWidth: CGFloat,
+    init(pageWidth: CGFloat,
          contentSize: CGSize,
          leftPercent: Binding<CGFloat>,
          @ViewBuilder content: () -> Content) {
-        self.pageWidth = pagdWidth
+        self.pageWidth = pageWidth
         self.contentSize = contentSize
         self.content = content()
         self._leftPercent = leftPercent
@@ -68,6 +68,9 @@ struct HScrollViewController<Content: View>: UIViewControllerRepresentable {
             withAnimation {
                 parent.leftPercent = scrollView.contentOffset.x < parent.pageWidth * 0.5 ? 0 : 1
             }
+            print(scrollView.contentOffset.x)
+            print("pageWidth \(parent.pageWidth)")
+//            print("pageWidth", to: &parent.pageWidth * 0.5)
         }
     }
 }

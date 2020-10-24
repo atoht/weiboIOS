@@ -9,9 +9,19 @@ import SwiftUI
 
 private let kLabelWidth: CGFloat = 60
 private let kButtonHeight: CGFloat = 24
+private let widthPrint: CGFloat = 0
 
 struct HomeNavigationBar: View {
     @Binding var leftPercent: CGFloat
+    
+    func log(_ geometry: GeometryProxy) -> EmptyView {
+        print(geometry.size.width
+                * (self.leftPercent - 0.5)
+                + kLabelWidth * (1.8 - self.leftPercent))
+        print(self.leftPercent)
+        print(kLabelWidth)
+        return EmptyView()
+    }
     
     var body: some View {
         HStack(alignment: .top, spacing: 0, content: {
@@ -63,12 +73,18 @@ struct HomeNavigationBar: View {
                                     * (self.leftPercent - 0.5)
                                     + kLabelWidth * (1.8 - self.leftPercent)
                         )
+                    log(geometry)
+                    
+//                    widthPrint = geometry.size.width
+//                        * (self.leftPercent - 0.5)
+//                        + kLabelWidth * (1.8 - self.leftPercent)
+                    
 //                        .offset(x: (UIScreen.main.bounds.width - geometry.size.width) / 2)
                 }
                 .frame(height: 6)
             }
             .frame(width: UIScreen.main.bounds.width * 0.5)
-            
+//            print("widthPrint")
             Spacer()
             
             Button(action: {print("click add button")}, label: {

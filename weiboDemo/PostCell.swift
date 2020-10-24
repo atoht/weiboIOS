@@ -10,8 +10,17 @@ import SwiftUI
 struct PostCell: View {
     let post: Post
     
+    var bindingPost: Post {
+        userData.post(forId: post.id)!
+    }
+    
+    @State var presentComment: Bool = false
+    
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
-        VStack {
+        var post = bindingPost
+        return VStack(alignment: .leading) {
             HStack {
                 post.avatarImage
                     .resizable()
@@ -31,11 +40,12 @@ struct PostCell: View {
                         .font(.system(size: 11))
                         .foregroundColor(.gray)
                 })
-//                .padding(.leading, 10)
+                                .padding(.leading, 10)
                 if !post.isFollowed {
                     Spacer()
                     Button(action: {
-                        print("click ....")
+                        post.isFollowed = true
+                        self.userData.update(post)
                     }, label: {
                         Text("关注")
                             .font(.system(size: 14))
@@ -51,6 +61,7 @@ struct PostCell: View {
             
             Text(post.text)
                 .font(.system(size: 17))
+                .frame(alignment: .topLeading)
             if !post.images.isEmpty {
                 PostImageCell(images: post.images, width: UIScreen.main.bounds.width - 30)
             }
@@ -60,11 +71,22 @@ struct PostCell: View {
             HStack(spacing: 0) {
                 Spacer()
                 PostCellToolbarButton(image: "message", text: post.commentCountText, color: .black) {
-                    print("click comment button")
+                    self.presentComment = true
                 }
+                .sheet(isPresented: $presentComment, content: {
+                    CommentInputView(post: post).environmentObject(self.userData)
+                })
+                
                 Spacer()
-                PostCellToolbarButton(image: "heart", text: post.likeCountText, color: .black) {
-                    print("click heart button")
+                PostCellToolbarButton(image: post.isLiked ? "heart.fill" : "heart", text: post.likeCountText, color: post.isLiked ? .red : .black) {
+                    if post.isLiked {
+                        post.isLiked = false
+                        post.likeCount -= 1
+                    } else {
+                        post.isLiked = true
+                        post.likeCount += 1
+                    }
+                    self.userData.update(post)
                 }
                 Spacer()
             }
@@ -82,8 +104,9 @@ struct PostCell: View {
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
-        PostCell(post: postList.list[0])
-            
-            
+        let userData = UserData()
+        return PostCell(post: userData.recommendPostList.list[0]).environmentObject(userData)
+        
+        
     }
 }
